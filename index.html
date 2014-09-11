@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Hello</title>
+</head>
+
+<style>
+    
+</style>
+
+<body>
+    <div width="100%">
+        <img id="mainIMG" alt="Main image"/>
+
+        <!-- Fallback for no JavaSript browser -->
+        <noscript>
+            <img src="https://farm8.staticflickr.com/7381/13941792457_ce0ecf471f_b.jpg" alt="Main image"/>
+        </noscript>
+    </div>
+
+    <script>
+        loadRandomIMG();
+
+        // Generate a random number r, where r = [min, max)
+        function generateRandomNumber(max, min) {
+            return Math.floor(Math.random() * (max - min) + min);
+        }
+
+        function loadRandomIMG() {
+            var targetIMG;
+            var randomNumber = generateRandomNumber(0, 6);
+
+            console.log(randomNumber);
+
+            switch (randomNumber) {
+                case 0:
+                    targetIMG = "https://farm6.staticflickr.com/5596/14846566149_4d48cda29e_b.jpg";
+                    break;
+                case 1:
+                    targetIMG = "https://farm4.staticflickr.com/3903/14988354761_69e41b72c3_o.jpg";
+                    break;
+                case 2:
+                    targetIMG = "https://farm4.staticflickr.com/3855/14804757059_ee18b3f0e0_b.jpg";
+                    break;
+                case 3:
+                    targetIMG = "https://farm4.staticflickr.com/3755/14253197562_9cf39ac02a_b.jpg";
+                    break;
+                case 4:
+                    targetIMG = "https://farm6.staticflickr.com/5572/14253192022_fc5f2c535d_b.jpg";
+                    break;
+                case 5:
+                    targetIMG = "https://farm4.staticflickr.com/3709/14255365625_c65b794b78_b.jpg";
+                    break;
+                default:
+                    targetIMG = "https://farm8.staticflickr.com/7381/13941792457_ce0ecf471f_b.jpg";
+                    break;
+            }
+
+            document.getElementById("mainIMG").src = targetIMG;
+
+        }
+    </script>
+</body>
+</html>
