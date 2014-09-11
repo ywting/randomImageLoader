@@ -20,6 +20,10 @@
     </div>
 
     <script>
+        // Constants for minimum and maximum number of images.
+        var MIN = 0;
+        var MAX = 6;
+
         loadRandomIMG();
 
         // Generate a random number r, where r = [min, max)
@@ -29,7 +33,7 @@
 
         function loadRandomIMG() {
             var targetIMG;
-            var randomNumber = generateRandomNumber(0, 6);
+            var randomNumber = generateRandomNumber(MIN, MAX);
 
             console.log(randomNumber);
 
